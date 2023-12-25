@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 const Header = () => {
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-900">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -38,7 +38,7 @@ const Header = () => {
     </ul>
   </div>
   <div className="navbar-end space-x-3">
-    <Link href="#" className="btn">Login</Link>
+    <Link href="/Login" className="btn">Login</Link>
     <Link href="#" className="btn bg-blue-700">Sign Up</Link>
   </div>
 </div>
