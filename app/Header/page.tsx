@@ -39,7 +39,7 @@ const Header = () => {
   </div>
   <div className="navbar-end space-x-3">
     <Link href="/Login" className="btn">Login</Link>
-    <Link href="#" className="btn bg-blue-700">Sign Up</Link>
+    <Link href="/Signup" className="btn bg-blue-700">Sign Up</Link>
   </div>
 </div>
   )
