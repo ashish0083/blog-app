@@ -1,6 +1,12 @@
+'use client'
 import React from 'react'
 import Link from 'next/link'
+import { useSession } from 'next-auth/react'
+import Login from '../Login/page'
+
 const Header = () => {
+  const {status, data:session} = useSession();
+
   return (
     <div className="navbar bg-base-900">
   <div className="navbar-start">
@@ -38,8 +44,13 @@ const Header = () => {
     </ul>
   </div>
   <div className="navbar-end space-x-3">
-    <Link href="/Login" className="btn">Login</Link>
-    <Link href="/Signup" className="btn bg-blue-700">Sign Up</Link>
+    {status === 'authenticated' && 
+    
+    <div>{session.user!.name}
+    <Link href="api/auth/signout" className="btn bg-blue-700 ml-5">Sign Out</Link>  
+    </div>}
+    {status === 'unauthenticated' && <Link href="/api/auth/signin" className="btn">Sign in </Link>}
+    {status === 'unauthenticated' && <Link href="/Signup" className="btn bg-blue-700">Sign Up</Link>}
   </div>
 </div>
   )
